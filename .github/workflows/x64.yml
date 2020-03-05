@@ -90,5 +90,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt x64
+        name: OpenWrt x64 esirmod
         path: openwrt/bin
