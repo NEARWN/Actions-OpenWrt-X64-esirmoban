@@ -105,16 +105,3 @@ jobs:
       with:
         name: OpenWrt
         path: openwrt/bin
-    
-    - name: Upload firmware directory
-      uses: actions/upload-artifact@master
-      if: steps.organize.outputs.status == 'success' && !cancelled()
-      with:
-        name: OpenWrt firmware X64
-        path: ${{ env.FIRMWARE }}
-
-    - name: Upload packages directory
-      uses: actions/upload-artifact@master
-      with:
-        name: OpenWrt_bin_packages
-        path: openwrt/bin/package
