@@ -93,15 +93,13 @@ jobs:
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-        
     - name: Build firmware
       working-directory: ./openwrt
       run: |
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
-        
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt phicomm x64${{ env.FILE_DATE }}
+        name: OpenWrt Build_x86_64
         path: openwrt/bin
